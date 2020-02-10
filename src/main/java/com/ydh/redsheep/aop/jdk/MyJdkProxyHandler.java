@@ -1,7 +1,10 @@
 package com.ydh.redsheep.aop.jdk;
 
+import com.ydh.redsheep.aop.service.AOPServiceImpl;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 /**
  * @description:
@@ -18,8 +21,12 @@ public class MyJdkProxyHandler implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println("i am jdk proxy");
         return method.invoke(target, args);
+    }
+
+    public static Object getProxy(Class clazz){
+        return Proxy.newProxyInstance(clazz.getClassLoader(),
+                new Class[]{clazz}, new MyJdkProxyHandler(new AOPServiceImpl()));
     }
 
 }
