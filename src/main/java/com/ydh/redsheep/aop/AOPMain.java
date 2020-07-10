@@ -27,19 +27,22 @@ public class AOPMain {
         long end2 = System.currentTimeMillis();
         System.out.println("cglib创建时间=" + (end2-begin2));
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
+
+            System.out.println("================================第" + i + "次进行处理==========================");
+
             long begin = System.currentTimeMillis();
-            run(aopService, 100000);
+            run(aopService, 1000000);
             long end = System.currentTimeMillis();
             System.out.println("不用代理时间=" + (end-begin));
 
             long begin3 = System.currentTimeMillis();
-            run(jdkAOP, 100000);
+            run(jdkAOP, 1000000);
             long end3 = System.currentTimeMillis();
             System.out.println("jdk代理时间=" + (end3-begin3));
 
             long begin4 = System.currentTimeMillis();
-            run(cglibAOP, 100000);
+            run(cglibAOP, 1000000);
             long end4 = System.currentTimeMillis();
             System.out.println("cglib代理时间=" + (end4-begin4));
         }
