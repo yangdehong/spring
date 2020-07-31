@@ -8,7 +8,6 @@ public class SpringSimple {
     public static void main(String[] args) {
         ApplicationContext ac = new ClassPathXmlApplicationContext("spring.xml");
         SpringDemo bean = ac.getBean(SpringDemo.class);
-        System.out.println(bean);
     }
 
 }
