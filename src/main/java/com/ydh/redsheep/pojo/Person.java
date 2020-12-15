@@ -1,4 +1,4 @@
-package com.ydh.redsheep.beanlife;
+package com.ydh.redsheep.pojo;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;

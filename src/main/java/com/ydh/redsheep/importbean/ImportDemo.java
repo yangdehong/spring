@@ -1,4 +1,4 @@
-package com.ydh.redsheep.importtest;
+package com.ydh.redsheep.importbean;
 
 import org.springframework.context.annotation.Import;
 

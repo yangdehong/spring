@@ -1,5 +1,6 @@
 package com.ydh.redsheep.beanlife;
 
+import com.ydh.redsheep.pojo.Person;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
